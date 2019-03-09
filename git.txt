@@ -1,0 +1,2 @@
+1、创建SSH Key。在用户主目录下，.ssh\id_rsa,id_rsa.pub
+$ ssh-keygen -t rsa -C "youremail@example.com"
