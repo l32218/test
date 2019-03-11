@@ -1,3 +1,42 @@
+1、启动
+Git Bash 
+
+2、设置 --global 表示你这台机器上所有的Git仓库都会使用这个配置
+$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+
+3、创建一个版本库
+$ mkdir learngit
+$ cd learngit
+$ git init
+
+4、添加文件到Git仓库
+   1）创建文件要放到learngit目录下（子目录也行）
+   2）-m后面输入的是本次提交的说明
+$ git add readme.txt
+$ git commit -m "wrote a readme file"
+
+5、查看文件状态和版本对比
+$ git status
+$ git diff readme.txt 
+
+6、查看提交历史 
+$ git log  --pretty=oneline
+
+7、查看命令历史（所有commit版本包括被回退的）
+$ git reflog
+
+8、版本回退
+$ git reset --hard HEAD^
+$ git reset --hard 1094a
+   1094a是commit id的头几个字符
+
+9、撤销修改（让这个文件回到最近一次git commit或git add时的状态）
+$ git checkout -- readme.txt
+
+10、删除文件
+$ git rm readme.txt
+
 1、创建SSH Key。在用户主目录下，.ssh\id_rsa,id_rsa.pub
 $ ssh-keygen -t rsa -C "youremail@example.com"
 2、登陆GitHub，打开“Account settings”，“SSH Keys”页面，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容：
@@ -49,7 +88,22 @@ $ git stash drop
 或者等价于
 $ git stash pop
 
+7、创建标签
+$ git tag  <tagname>
+$ git tag  <tagname> [commit id]
+$ git tag -a <tagname> -m "blablabla..." [commit id]
 
+8、查看标签
+$ git tag
+$ git show <tagname>
+
+10、删除标签
+$ git tag -d <tagname>
+$ git push origin :refs/tags/<tagname>
+
+11、推送标签
+$ git push origin <tagname>
+$ git push origin --tags
 
 
 1、多人协作
